@@ -69,15 +69,4 @@ Tested on RTX 2080 Ti GPU with CUDA Version 11.4
     </tr>
 </table>
 
-## Citing this work
-```
-@inproceedings{
-anonymous2022specialized,
-title={Specialized Transformers: Faster, Smaller and more Accurate {NLP} Models},
-author={Anonymous},
-booktitle={Submitted to The Tenth International Conference on Learning Representations },
-year={2022},
-url={https://openreview.net/forum?id=aUoV6qhY_e},
-note={under review}
-}
-```
+
