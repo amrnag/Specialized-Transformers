@@ -16,9 +16,9 @@ Tested on RTX 2080 Ti GPU with CUDA Version 11.4
 
 ## Commands
 
-+ In order to ensure reproducibility, this repository also includes a train-validation split configuration for CoLA, RTE and WNLI (the three tasks where the conventional fine-tuned models achieve lowest accuracies) under `data/`. To obtain the specialized model, use `python run_predictions.py   --model_type bert   --model_name_or_path bert-base-cased   --task_name $TASK_NAME --do_train   --do_eval   --do_lower_case   --data_dir /data/$TASK_NAME/   --max_seq_length 128   --per_gpu_train_batch_size 32   --learning_rate 2e-5   --num_train_epochs 3.0   --output_dir /tmp/$TASK_NAME --overwrite_output_dir`
++ In order to ensure reproducibility, this repository also includes a train-validation split configuration for CoLA, RTE and WNLI (the three tasks where the conventional fine-tuned models achieve lowest accuracies) under `data/`. To obtain the AxFormer model, use `python run_predictions.py   --model_type bert   --model_name_or_path bert-base-cased   --task_name $TASK_NAME --do_train   --do_eval   --do_lower_case   --data_dir /data/$TASK_NAME/   --max_seq_length 128   --per_gpu_train_batch_size 32   --learning_rate 2e-5   --num_train_epochs 3.0   --output_dir /tmp/$TASK_NAME --overwrite_output_dir`
 + To obtain the conventional finetuned model, use `python finetune.py   --model_type bert   --model_name_or_path bert-base-cased   --task_name $TASK_NAME --do_train   --do_eval   --do_lower_case   --data_dir $GLUE_DIR/$TASK_NAME/   --max_seq_length 128   --per_gpu_train_batch_size 32   --learning_rate 2e-5   --num_train_epochs 3.0   --output_dir /tmp/$TASK_NAME --overwrite_output_dir`. Here, $GLUE_DIR refers to the path to the GLUE dataset downloaded using this [script](https://gist.github.com/W4ngatang/60c2bdb54d156a41194446737ce03e2e). The entire training set is used to finetune the model (no train-validation split).
-+ To analyze variance in accuracy of the specialized model across different seeds, use `python finetune.py   --model_type bert   --model_name_or_path bert-base-cased   --task_name $TASK_NAME --do_train   --do_eval   --do_lower_case   --data_dir $GLUE_DIR/$TASK_NAME/   --max_seq_length 128   --per_gpu_train_batch_size 32   --learning_rate 2e-5   --num_train_epochs 3.0   --output_dir /tmp/$TASK_NAME --overwrite_output_dir --from_specialized --seed $SEED`. Here, $GLUE_DIR refers to the path to the GLUE dataset downloaded using this [script](https://gist.github.com/W4ngatang/60c2bdb54d156a41194446737ce03e2e). The entire training set is used to finetune the model (no train-validation split).
++ To analyze variance in accuracy of the AxFormer model across different seeds, use `python finetune.py   --model_type bert   --model_name_or_path bert-base-cased   --task_name $TASK_NAME --do_train   --do_eval   --do_lower_case   --data_dir $GLUE_DIR/$TASK_NAME/   --max_seq_length 128   --per_gpu_train_batch_size 32   --learning_rate 2e-5   --num_train_epochs 3.0   --output_dir /tmp/$TASK_NAME --overwrite_output_dir --from_specialized --seed $SEED`. Here, $GLUE_DIR refers to the path to the GLUE dataset downloaded using this [script](https://gist.github.com/W4ngatang/60c2bdb54d156a41194446737ce03e2e). The entire training set is used to finetune the model (no train-validation split).
 
 ## Results
 + Results on the GLUE test set (obtained by submitting to the GLUE [server](https://gluebenchmark.com/))
@@ -26,7 +26,7 @@ Tested on RTX 2080 Ti GPU with CUDA Version 11.4
     <tr align="center">
         <th>Dataset</th>
         <th>Conventional fine-tuned model</th>
-        <th>Specialized model</th>
+        <th>AxFormer model</th>
     </tr>
     <tr align="center">
         <td>CoLA</td>
@@ -50,7 +50,7 @@ Tested on RTX 2080 Ti GPU with CUDA Version 11.4
     <tr align="center">
         <th>Dataset</th>
         <th>Conventional fine-tuned model</th>
-        <th>Specialized model</th>
+        <th>AxFormer model</th>
     </tr>
     <tr align="center">
         <td>CoLA</td>
