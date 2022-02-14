@@ -1,5 +1,5 @@
-# Specialized Transformers: Faster, Smaller and more Accurate NLP Models
-This repository contains the source code for Specialized Transformers: Faster, Smaller and more Accurate NLP Models. This implementation builds on Huggingface's [Transformers](https://github.com/huggingface/transformers) library in Pytorch. Scripts from  the implementation of [BERT-of-Theseus](https://github.com/JetRunner/BERT-of-Theseus) are used to prepare files for submission to the GLUE test server.
+# AxFormer: Accuracy-driven approximation of transformers for faster, smaller and more accurate NLP models
+This repository contains the source code for AxFormer: Accuracy-driven approximation of transformers for faster, smaller and more accurate NLP models. This implementation builds on Huggingface's [Transformers](https://github.com/huggingface/transformers) library in Pytorch. Scripts from  the implementation of [BERT-of-Theseus](https://github.com/JetRunner/BERT-of-Theseus) are used to prepare files for submission to the GLUE test server.
 
 ## Dependencies
 transformers 2.2.0
