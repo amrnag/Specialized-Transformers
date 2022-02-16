@@ -69,4 +69,5 @@ Tested on RTX 2080 Ti GPU with CUDA Version 11.4
     </tr>
 </table>
 
++ Note: This repository does not perform actual pruning. Therefore, efficiency benefits will not be apparent.
 
